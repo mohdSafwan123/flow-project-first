@@ -1,0 +1,10 @@
+import challenge from 0x05
+
+transaction(variety: String, ripeness: UInt, owner: Address) {
+  prepare(acct: AuthAccount) {}
+
+  execute {
+    challenge.addFruit(variety: variety, ripeness: ripeness, owner: owner)
+    log("Fruit added")
+  }
+}
