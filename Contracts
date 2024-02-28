@@ -1,0 +1,24 @@
+pub contract challenge {
+  pub var fruits: {Address: fruit}
+
+  pub struct fruit {
+    pub let variety: String
+    pub let ripeness: UInt
+    pub let owner: Address
+
+    init(_variety: String, _ripeness: UInt, _owner: Address) {
+      self.variety = _variety
+      self.ripeness = _ripeness
+      self.owner = _owner
+    }
+  }
+
+  pub fun addFruit(variety: String, ripeness: UInt, owner: Address) {
+    let newFruit = fruit(_variety: variety, _ripeness: ripeness, _owner: owner)
+    self.fruits[owner] = newFruit
+  }
+
+  init() {
+    self.fruits = {}
+  }
+}
