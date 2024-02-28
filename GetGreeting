@@ -1,0 +1,6 @@
+ import challenge from 0x05
+
+pub fun main(owner: Address):challenge.fruit{
+
+return challenge.fruits[owner]!
+}
